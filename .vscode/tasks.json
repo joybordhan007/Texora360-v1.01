@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "web: dev",
+      "type": "shell",
+      "command": "pnpm dev",
+      "options": { "cwd": "${workspaceFolder}/apps/web" },
+      "isBackground": true,
+      "runOptions": { "runOn": "folderOpen" },
+      "problemMatcher": {
+        "owner": "nextjs",
+        "pattern": { "regexp": "^x^" },
+        "background": { "activesBegin": "Starting", "activesEnd": "Ready in" }
+      },
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "web: build",
+      "type": "shell",
+      "command": "pnpm build",
+      "options": { "cwd": "${workspaceFolder}/apps/web" },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "web: install",
+      "type": "shell",
+      "command": "pnpm install",
+      "options": { "cwd": "${workspaceFolder}/apps/web" },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* Design tokens taken from the Figma "Foundation" variables (Texora360 v1.01). */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #2084ff;
+  --color-primary-soft: rgb(32 132 255 / 0.07);
+
+  --color-ink: #191919;
+  --color-grey-900: #2f2f2f;
+  --color-grey-800: #3e3e3e;
+  --color-grey-700: #505050;
+  --color-grey-600: #666666;
+  --color-grey-500: #707070;
+  --color-grey-300: #d4d4d4;
+  --color-grey-100: #eeeeee;
+
+  --color-page: #f5f5f5;
+  --color-table-head: #f9fafb;
+  --color-line: rgb(0 0 0 / 0.04);
+  --color-border: rgb(0 0 0 / 0.1);
+
+  --color-danger: #e80000;
+  --color-danger-strong: #ff0000;
+  --color-success: #22bb33;
+  --color-warning: #f59e0b;
+  --color-teal: #0e8f7e;
+  --color-quote: #eda325;
+
+  --shadow-e1: 0 1px 4px 0 rgb(0 0 0 / 0.08);
+}
+
+html,
+body {
+  background: var(--color-page);
+  color: var(--color-grey-800);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Monochrome Figma icons are rendered through a CSS mask so they can follow text colour. */
+.icon-mask {
+  display: inline-block;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+@media print {
+  @page {
+    margin: 0;
+  }
+  .no-print {
+    display: none !important;
+  }
+  html,
+  body {
+    background: white;
+  }
+}
